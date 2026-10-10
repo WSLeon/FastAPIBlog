@@ -103,8 +103,8 @@ FastAPIBlog/
 
 ### 1. 克隆代码仓库
 ```bash
-git clone https://github.com/<your-username>/phd-survival-station.git
-cd FastAPIBlog
+git clone https://github.com/WSLeon/phd-survival-station.git
+cd phd-survival-station
 ```
 
 ### 2. 启动后端 (Python + FastAPI)
