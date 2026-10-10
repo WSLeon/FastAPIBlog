@@ -21,3 +21,48 @@ Content-Type: application/json
   "mood": "努力",
   "summary": "今天完成了文献综述并打了1小时羽毛球！"
 }
+
+### Location Checkin
+POST http://127.0.0.1:8000/locations/checkin/
+Content-Type: application/json
+
+{
+  "location_id": 1,
+  "date": "2026-10-10"
+}
+
+### Get Month Records for Calendar
+GET http://127.0.0.1:8000/month_records/2026-10
+Accept: application/json
+
+### Get Tasks
+GET http://127.0.0.1:8000/tasks/
+Accept: application/json
+
+### Create Task
+POST http://127.0.0.1:8000/tasks/
+Content-Type: application/json
+
+{
+  "title": "精读实验对比顶会论文",
+  "category": "论文写作",
+  "priority": "高",
+  "status": "todo",
+  "due_date": "2026-10-15"
+}
+
+### Get Academic Diaries
+GET http://127.0.0.1:8000/diaries/
+Accept: application/json
+
+### Create Academic Diary
+POST http://127.0.0.1:8000/diaries/
+Content-Type: application/json
+
+{
+  "date": "2026-10-10",
+  "title": "实验调优进展顺利",
+  "content": "今天重新设计了损失函数，验证集指标提升明显！",
+  "tag": "实验心得",
+  "mood": "开心"
+}

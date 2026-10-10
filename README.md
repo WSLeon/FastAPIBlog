@@ -103,8 +103,8 @@ FastAPIBlog/
 
 ### 1. 克隆代码仓库
 ```bash
-git clone https://github.com/WSLeon/phd-survival-station.git
-cd phd-survival-station
+git clone git@github.com:WSLeon/FastAPIBlog.git
+cd FastAPIBlog
 ```
 
 ### 2. 启动后端 (Python + FastAPI)
@@ -154,16 +154,30 @@ npm run dev
 | :--- | :--- | :--- |
 | `GET` | `/` | 状态检查（返回运行状态） |
 | `GET` | `/day/{target_date}` | 获取指定日期（格式：`YYYY-MM-DD`）的科研时长、运动时长、心情与总结 |
-| `GET` | `/stats/{target_date}` | 获取截至该日期的今日、本月、本年、累计总时长与地点驻留聚合统计 |
 | `POST` | `/update_day/` | 增量更新或录入某一天的记录（时长、心境、总结） |
+| `GET` | `/stats/{target_date}` | 获取今日、本月、本年、累计总时长与地点驻留聚合统计 |
+| `POST` | `/locations/checkin/` | 地点一键打卡（图书馆/实验室/咖啡厅/家里/羽毛球馆驻留 +1） |
+| `GET` | `/month_records/{year_month}` | 获取当月全量打点数据（用于学术日历高亮与状态可视化） |
+| `GET` | `/tasks/` | 获取全部学术任务列表 |
+| `POST` | `/tasks/` | 创建学术任务（标题/分类/优先级/截止时间） |
+| `PUT` | `/tasks/{task_id}` | 更新学术任务（状态/优先级/截止时间等） |
+| `DELETE` | `/tasks/{task_id}` | 删除学术任务 |
+| `GET` | `/diaries/` | 获取学术长征日记列表 |
+| `POST` | `/diaries/` | 创建学术日记（文献笔记/实验心得/审稿吐槽等） |
+| `DELETE` | `/diaries/{diary_id}` | 删除学术日记 |
+| `POST` | `/upload/` | 附件/图片上传接口 |
 | `GET` | `/uploads/{file_name}` | 静态附件访问 |
 
 ---
 
-## 🗺️ 后续路线图 (Roadmap)
+## 🗺️ 功能全貌与后续规划 (Roadmap)
 
-- [ ] **任务管理看板 (Task Kanban)**：针对论文写作、审稿修回与实验批次的分阶段任务管理。
-- [ ] **学术日记归档 (Diary Archive)**：支持 Markdown 格式的长文学术日记写作与导出（PDF/Markdown）。
+- [x] **实时科研/运动专注计时器**：支持科研专注与羽毛球解压双模式，停止自动无感落库。
+- [x] **成果聚合看板**：今日、本月、本年、累计总时长多维对比。
+- [x] **地点驻留与一键打卡**：支持科研主场频次统计与实时打卡。
+- [x] **学术任务管理看板 (Task Kanban)**：论文写作、科研实验、组会汇报等多维度分类与状态追踪。
+- [x] **学术长征日记 (Academic Diary)**：灵感碎片、文献笔记与心悟记录。
+- [x] **交互式学术日历与历史补录**：月度打点与即时修改。
 - [ ] **数据可视化图表**：接入 ECharts / Chart.js，展示科研专注时长与羽毛球运动周/月趋势热力图。
 - [ ] **多设备同步与云备份**：支持轻量级账号系统或本地数据导入导出。
 - [ ] **Docker 容器化**：提供一键部署 Docker Compose 配置。
