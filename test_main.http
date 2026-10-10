@@ -1,0 +1,23 @@
+### Root Health Check
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+### Get Day Record
+GET http://127.0.0.1:8000/day/2026-10-10
+Accept: application/json
+
+### Get Stats
+GET http://127.0.0.1:8000/stats/2026-10-10
+Accept: application/json
+
+### Update Day Record
+POST http://127.0.0.1:8000/update_day/
+Content-Type: application/json
+
+{
+  "date": "2026-10-10",
+  "study_time_seconds": 7200,
+  "ball_time_seconds": 3600,
+  "mood": "努力",
+  "summary": "今天完成了文献综述并打了1小时羽毛球！"
+}
